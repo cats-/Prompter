@@ -44,6 +44,10 @@ public class Prompt<T>{
     public List<T> getPreviousResponses(){
         return Collections.unmodifiableList(previousResponses);
     }
+    
+    public T getLastResponse(){
+        return previousResponses.isEmpty() ? null : previousResponses.get(previousResponses.size()-1);
+    }
 
     public void setParser(final Parser<T> parser){
         this.parser = parser;
